@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공장이전 4M 3사 합동 점검 준비 가이드</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            line-height: 1.5;
+            color: #333;
+            background: #f5f5f5;
+            padding: 15px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2em;
+            margin-bottom: 8px;
+        }
+        
+        .header .subtitle {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        
+        .urgent {
+            background: #e74c3c;
+            color: white;
+            padding: 12px;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .content {
+            padding: 25px;
+        }
+        
+        .section {
+            margin-bottom: 25px;
+            padding-left: 0px;
+        }
+        
+        .section h2 {
+            color: #2c3e50;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+        }
+        
+        .combined-info {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 8px;
+            padding: 15px;
+            border: 2px solid #3498db;
+            margin: 15px 0;
+        }
+        
+        .info-row {
+            display: flex;
+            align-items: center;
+            margin: 6px 0;
+            padding: 4px 0;
+        }
+        
+        .info-row:not(:last-child) {
+            border-bottom: 1px solid #dee2e6;
+        }
+        
+        .info-label {
+            font-weight: bold;
+            color: #2c3e50;
+            min-width: 100px;
+            font-size: 1em;
+        }
+        
+        .info-value {
+            color: #e74c3c;
+            font-weight: bold;
+            font-size: 1em;
+        }
+        
+        .definition-box {
+            background: #e8f4fd;
+            border: 2px solid #3498db;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+        
+        .definition-box h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        
+        .product-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 0.9em;
+        }
+        
+        .product-table th {
+            background: #34495e;
+            color: white;
+            padding: 10px 8px;
+            text-align: center;
+        }
+        
+        .product-table td {
+            padding: 8px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .product-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(90deg, #e8f5e8, #fff3cd);
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            text-align: center;
+            border: 2px solid #28a745;
+        }
+        
+        .key-points {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+        
+        .key-points h3 {
+            color: #856404;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+        
+        .capd-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .capd-card {
+            border-radius: 8px;
+            padding: 15px;
+            border: 2px solid;
+        }
+        
+        .capd-card.red {
+            border-color: #e74c3c;
+            background: #ffebee;
+        }
+        
+        .capd-card.orange {
+            border-color: #f39c12;
+            background: #fff8e1;
+        }
+        
+        .capd-card.green {
+            border-color: #27ae60;
+            background: #e8f5e8;
+        }
+        
+        .capd-card h3 {
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .dept-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 15px 0;
+        }
+        
+        .dept-card {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 15px;
+            border: 1px solid #dee2e6;
+        }
+        
+        .dept-card h4 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .risk-box {
+            background: #ffebee;
+            border: 2px solid #e74c3c;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .risk-box h3 {
+            color: #e74c3c;
+            margin-bottom: 10px;
+        }
+        
+        .requests-box {
+            background: #e8f5e8;
+            border: 2px solid #28a745;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+        
+        .requests-box h3 {
+            color: #28a745;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+        
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        li {
+            margin: 6px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        li::before {
+            content: "▶";
+            position: absolute;
+            left: 0;
+            color: #3498db;
+            font-weight: bold;
+        }
+        
+        .quote-box {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: left;
+            font-style: italic;
+        }
+        
+        .author {
+            text-align: right;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #2c3e50;
+            font-style: normal;
+        }
+        
+        .emphasis {
+            background: #ffeaa7;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+            }
+            
+            .content {
+                padding: 15px;
+            }
+            
+            .combined-info {
+                padding: 15px;
+            }
+            
+            .info-row {
+                flex-direction: column;
+                align-items: flex-start;
+                margin: 8px 0;
+            }
+            
+            .info-label {
+                min-width: auto;
+                margin-bottom: 5px;
+            }
+            
+            .capd-grid,
+            .dept-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .product-table {
+                font-size: 0.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏭 3사 합동 점검 준비 가이드</h1>
+            <p class="subtitle">공장이전 4M 점검 대응 매뉴얼</p>
+        </div>
+        
+        <div class="urgent">
+            ⚡ 확정: 2025-06-27(금) - HMC 전장사업부 1차 메이저 3사 점검 ⚡
+        </div>
+        
+        <div class="content">
+            <!-- 3사 합동 점검 정의 -->
+            <div class="section">
+                <h2>📋 3사 합동 점검이란?</h2>
+                <div class="definition-box">
+                    <p><strong>HMC 전장사업부 1차 메이저 3사</strong>가 공동으로 점검하는 제도</p>
+                    <ul>
+                        <li><strong>경신:</strong> 주관장사 (부품품질팀 송현우)</li>
+                        <li><strong>유라, THN:</strong> 협력점검사</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 기본 정보 -->
+            <div class="section">
+                <h2>📅 점검 기본 정보</h2>
+                <div class="combined-info">
+                    <div class="info-row">
+                        <span class="info-label">📅 확정일시:</span>
+                        <span class="info-value">2025년 6월 27일(금) 10:00~15:00 (약 4시간)</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">👥 점검 구조:</span>
+                        <span class="info-value">3개사 동시 다발 점검 (실질 12시간 효과)</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">📦 대상품번:</span>
+                        <span class="info-value">6/12 SQ평가시 준비했던 ITEM (2개 품번)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 점검 대상 품번 -->
+            <div class="section">
+                <h2>📦 점검 대상 품번 상세</h2>
+                <table class="product-table">
+                    <tr>
+                        <th>품번</th>
+                        <th>금형</th>
+                        <th>Cavity</th>
+                        <th>원재료</th>
+                        <th>수지</th>
+                    </tr>
+                    <tr>
+                        <td><strong>200S576-1A</strong></td>
+                        <td>21-1065721</td>
+                        <td class="info-value">2</td>
+                        <td>PBT</td>
+                        <td>TRIBIT 1503</td>
+                    </tr>
+                    <tr>
+                        <td><strong>936373-1</strong></td>
+                        <td>21-36272</td>
+                        <td class="info-value">4</td>
+                        <td>PBT</td>
+                        <td>TRIBIT 1503</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- 주요 핵심 사항 -->
+            <div class="section">
+                <h2>🎯 점검 준비 핵심 사항</h2>
+                
+                <div class="key-points">
+                    <h3>🚨 핵심 포인트</h3>
+                    <ul>
+                        <li><strong>6/12 SQ평가 지적사항:</strong> 경신에 <span class="emphasis">내부 전달된 상황</span> - 개선 필수</li>
+                        <li><strong>준비 범위:</strong> 두 품번 <span class="emphasis">원재료→출하</span> + <span class="emphasis">주변 설비</span> 문서</li>
+                        <li><strong>대응 구조:</strong> <span class="emphasis">각 팀/파트가 직접 대응</span> (팀장 1명으로 3명 대응 불가)</li>
+                        <li><strong>점검 강도:</strong> 3명 동시 점검 = <span class="emphasis">12시간 효과</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- CAPD 준비사항 -->
+            <div class="section">
+                <h2>🔄 CAPD 구조 기반 준비 실행</h2>
+                <div class="capd-grid">
+                    <div class="capd-card red">
+                        <h3>⚡ 선조치(C) - 즉시실행</h3>
+                        <ul>
+                            <li><strong>생산팀 (추홍근 팀장):</strong> 6/26까지 두 품번 스케줄 반영 (최소 D-1)</li>
+                            <li><strong>설비팀:</strong> 전공정 설비/ 점검 Check Sheet (6/12 이후 Stop 상태 해결)</li>
+                            <li><strong>사출팀:</strong> 설비/공무쪽으로 내용 전달 필수</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="capd-card orange">
+                        <h3>📋 계획(P) - 문서준비 체계</h3>
+                        <ul>
+                            <li><strong>1단계:</strong> 원재료→출하 전체 관리문서 완비</li>
+                            <li><strong>2단계:</strong> 앞뒤 좌우 설비의 공정 비치 문서</li>
+                            <li><strong>3단계:</strong> 현장게시물 최신 상태 확인</li>
+                            <li><strong>핵심:</strong> 6/12 SQ평가 문제점 위주 공정 준비</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="capd-card green">
+                        <h3>👥 실행(D) - 당일대응 시나리오</h3>
+                        <ul>
+                            <li><strong>현실:</strong> 품질팀장 1명이 3명 점검자 동시 대응 불가능</li>
+                            <li><strong>해결책:</strong> 각 팀장/파트장이 담당영역 직접 대응</li>
+                            <li><strong>필수조건:</strong> 관련 지침들을 꼭!! 인지하고 대응</li>
+                            <li><strong>당일 원칙:</strong> 주간 Set-up 최소화</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 부서별 체크리스트 -->
+            <div class="section">
+                <h2>🎯 부서별 핵심 체크리스트</h2>
+                <div class="dept-grid">
+                    <div class="dept-card">
+                        <h4>🏭 사출팀</h4>
+                        <ul>
+                            <li>두 개 금형 가동이력 완벽 정리</li>
+                            <li>성형조건 설정표 비치</li>
+                            <li>초중종물 검사기록 완비</li>
+                            <li><strong>설비/공무팀에 내용 전달</strong></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="dept-card">
+                        <h4>🔬 품질팀</h4>
+                        <ul>
+                            <li>PBT/TRIBIT 품질기준서 최신버전</li>
+                            <li>6/12 SQ평가 지적사항 개선 확인</li>
+                            <li>치수측정 데이터 및 관리도</li>
+                            <li>완제품 검사 성적서</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="dept-card">
+                        <h4>📦 원재료팀</h4>
+                        <ul>
+                            <li>PBT 입고검사 성적서</li>
+                            <li>원재료→출하 추적 가능 상태</li>
+                            <li>보관 온습도 기록</li>
+                            <li>선입선출 이력 완벽 정리</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="dept-card">
+                        <h4>⚙️ 설비/공무팀</h4>
+                        <ul>
+                            <li>전공정 설비 점검 Check Sheet 재가동</li>
+                            <li>예방보전 계획서 최신 상태</li>
+                            <li>금형별 점검일지 완비</li>
+                            <li>설비 가동률 데이터 준비</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 기타 요청사항 -->
+            <div class="section">
+                <h2>📋 필수 실행 사항</h2>
+                
+                <div class="requests-box">
+                    <h3>✅ 즉시 실행 지시</h3>
+                    <ul>
+                        <li><strong>추홍근 팀장:</strong> 6/26까지 두 품번 스케줄 반영 (최소 D-1)</li>
+                        <li><strong>전공정 설비:</strong> 6/12 이후 Stop된 점검 Check Sheet 재가동</li>
+                        <li><strong>사출팀:</strong> 설비/공무팀에 내용 전달 필수</li>
+                        <li><strong>당일 원칙:</strong> 주간 Set-up 최소화</li>
+                        <li><strong>문의사항:</strong> 미리미리 연락해서 사전 조율</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 리스크 관리 -->
+            <div class="section">
+                <h2>⚠️ 주요 리스크</h2>
+                <div class="risk-box">
+                    <h3>🚨 절대 피해야 할 상황</h3>
+                    <ul>
+                        <li><strong>6/12 SQ평가 지적사항 재발견</strong></li>
+                        <li><strong>전공정 설비 Check Sheet 누락</strong> (6/12 이후 Stop 상태)</li>
+                        <li><strong>3명 동시점검 대응 실패</strong> (각 방향 분산시)</li>
+                        <li><strong>담당자 지침 미숙지</strong></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 성공 기준 -->
+            <div class="section">
+                <h2>🏆 점검 성공 기준</h2>
+                <div class="highlight-box">
+                    <strong>🎯 목표:</strong> 두 품번 원재료→출하 100% 문서완비 + 주변설비 90% 준비 + 6/12 지적사항 완전개선
+                </div>
+            </div>
+
+            <!-- 팀장 메시지 -->
+            <div class="section">
+                <h2>💭 품질팀장 메시지</h2>
+                <div class="quote-box">
+                    "고객이 우리를 선택하는 첫 번째 기준은 <strong>품질</strong>입니다.<br>
+                    항상 변하지 않는 일관된 품질이 신뢰의 기반입니다.<br><br>
+                    
+                    <strong>지금은 고객의 마음을 다시 잡아올 때입니다.<br>
+                    작은 변화는 우리 손에서부터 시작됩니다!</strong>
+                </div>
+                <div class="author">- 김성진 품질팀장</div>
+            </div>
+
+            <!-- 최종 안내 -->
+            <div class="section">
+                <h2>📞 최종 안내</h2>
+                <div class="highlight-box">
+                    <strong>🤝 완벽한 준비를 위해</strong><br>
+                    각 담당자분들이 현장 전문가입니다. <strong>공정별 심사의 주관은 각 팀/파트</strong>가 담당하고,<br>
+                    <strong>준비 중 문의사항은 미리 연락</strong>해서 사전 조율해주세요!
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
